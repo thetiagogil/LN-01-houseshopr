@@ -6,9 +6,14 @@ import Input from "../../../components/Input/index.tsx";
 import Checkbox from "../../../components/Checkbox/index.tsx";
 import Button from "../../../components/Button/index.tsx";
 import Separator from "../../../components/Separator/index.tsx";
+import GoogleLogin from "../../../components/GoogleLogin/index.tsx";
 
 const Signup = (): React.JSX.Element => {
     const [checked, setChecked] = useState(false);
+
+    const onLogIn = () => {
+        console.log("you pressed log in button")
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -26,6 +31,13 @@ const Signup = (): React.JSX.Element => {
             <Button style={styles.button} title={"Sign Up"} />
 
             <Separator text={"Or sign up with"} />
+
+            <GoogleLogin />
+
+            <Text style={styles.footerText}>
+                Already have an account?
+                <Text style={styles.footerLink} onPress={onLogIn}> Log In</Text>
+            </Text>
         </SafeAreaView>
     );
 }

@@ -5,7 +5,7 @@ import { styles } from "./styles";
 const AuthHeader = ({ title, onBackPress }: any): React.JSX.Element => {
     return (
         <View style={styles.container}>
-            <Pressable hitSlop={20} onPress={onBackPress}>
+            <Pressable hitSlop={10} onPress={onBackPress}>
                 <Image style={styles.image} source={require("../../assets/auth_back.png")} />
             </Pressable>
 

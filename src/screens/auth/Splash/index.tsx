@@ -16,7 +16,7 @@ const Splash = (): React.JSX.Element => {
 
             <Button title={"Sign Up"} />
 
-            <Pressable hitSlop={20}>
+            <Pressable hitSlop={10}>
                 <Text style={styles.footerText}>Sign In</Text>
             </Pressable>
         </SafeAreaView>
