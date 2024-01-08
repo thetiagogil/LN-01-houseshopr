@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
         alignItems: "center"
     },
     input: {
+        color: colors.black,
         paddingHorizontal: 16,
         paddingVertical: 12,
         flex: 1

@@ -23,4 +23,4 @@ const Splash = (): React.JSX.Element => {
     );
 }
 
-export default Splash;
+export default React.memo(Splash);

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Image, Pressable, Text, TextInput, View } from "react-native";
-import { styles } from "./stylers";
+import { styles } from "./styles";
+import { colors } from "../../utils/colors.tsx"
 
 const Input = ({ label, placeholder, isPassword }: any): React.JSX.Element => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -13,7 +14,7 @@ const Input = ({ label, placeholder, isPassword }: any): React.JSX.Element => {
         <View style={styles.container}>
             <Text style={styles.label}>{label}</Text>
             <View style={styles.inputContainer}>
-                <TextInput secureTextEntry={isPassword && !isPasswordVisible} placeholder={placeholder} style={styles.input} />
+                <TextInput secureTextEntry={isPassword && !isPasswordVisible} style={styles.input} placeholder={placeholder} placeholderTextColor={colors.grey} />
 
                 {isPassword ? (
                     <Pressable onPress={onEyePress}>
@@ -24,4 +25,4 @@ const Input = ({ label, placeholder, isPassword }: any): React.JSX.Element => {
     );
 }
 
-export default Input;
+export default React.memo(Input);

@@ -14,4 +14,4 @@ const AuthHeader = ({ title, onBackPress }: any): React.JSX.Element => {
     );
 }
 
-export default AuthHeader;
+export default React.memo(AuthHeader);
