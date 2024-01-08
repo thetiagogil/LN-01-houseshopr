@@ -1,11 +1,11 @@
 import React from "react"
-import { Image, Pressable, Text, View } from "react-native";
+import { Image, Pressable, SafeAreaView, Text, View } from "react-native";
 import { styles } from "./styles"
 import Button from "../../../components/Button";
 
 const Splash = (): React.JSX.Element => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Image resizeMode="contain" style={styles.image} source={require("../../../assets/splash_image.png")} />
 
             <View style={styles.titleContainer}>
@@ -19,7 +19,7 @@ const Splash = (): React.JSX.Element => {
             <Pressable hitSlop={20}>
                 <Text style={styles.footerText}>Sign In</Text>
             </Pressable>
-        </View>
+        </SafeAreaView>
     );
 }
 

@@ -1,15 +1,16 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../utils/colors.tsx"
 
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#4F63AC",
+        backgroundColor: colors.blue,
         paddingVertical: 16,
         paddingHorizontal: 8,
         borderRadius: 8,
         width: "100%"
     },
     title: {
-        color: "#FFFFFF",
+        color: colors.white,
         textAlign: "center",
         fontSize: 16,
         fontWeight: "bold"
