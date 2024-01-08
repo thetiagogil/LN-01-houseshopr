@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, Text, View } from "react-native";
 import { styles } from "./styles.tsx"
 import AuthHeader from "../../../components/AuthHeader/index.tsx";
 import Input from "../../../components/Input/index.tsx";
@@ -8,36 +8,42 @@ import Button from "../../../components/Button/index.tsx";
 import Separator from "../../../components/Separator/index.tsx";
 import GoogleLogin from "../../../components/GoogleLogin/index.tsx";
 
-const Signup = (): React.JSX.Element => {
+const Signup = ({ navigation }: any): React.JSX.Element => {
     const [checked, setChecked] = useState(false);
 
-    const onLogIn = () => {
-        console.log("you pressed log in button")
+    const onLogIn = (): any => {
+        navigation.navigate("Login")
+    }
+
+    const onBack = (): any => {
+        navigation.goBack()
     }
 
     return (
-        <SafeAreaView style={styles.container}>
-            <AuthHeader title={"Sign Up"} />
+        <SafeAreaView>
+            <ScrollView style={styles.container}>
+                <AuthHeader onBackPress={onBack} title={"Sign Up"} />
 
-            <Input label={"Name"} placeholder={"Tiago Gil"} />
-            <Input label={"E-mail"} placeholder={"example@gmail.com"} />
-            <Input label={"Password"} placeholder={"********"} isPassword={true} />
+                <Input label={"Name"} placeholder={"Tiago Gil"} />
+                <Input label={"E-mail"} placeholder={"example@gmail.com"} />
+                <Input label={"Password"} placeholder={"********"} isPassword={true} />
 
-            <View style={styles.agreeRow}>
-                <Checkbox checked={checked} onCheck={setChecked} />
-                <Text style={styles.agreeText}>I agree with <Text style={styles.agreeTextBold}>Terms</Text> & <Text style={styles.agreeTextBold}>Privacy</Text></Text>
-            </View>
+                <View style={styles.agreeRow}>
+                    <Checkbox checked={checked} onCheck={setChecked} />
+                    <Text style={styles.agreeText}>I agree with <Text style={styles.agreeTextBold}>Terms</Text> & <Text style={styles.agreeTextBold}>Privacy</Text></Text>
+                </View>
 
-            <Button style={styles.button} title={"Sign Up"} />
+                <Button style={styles.button} title={"Sign Up"} />
 
-            <Separator text={"Or sign up with"} />
+                <Separator text={"Or sign up with"} />
 
-            <GoogleLogin />
+                <GoogleLogin />
 
-            <Text style={styles.footerText}>
-                Already have an account?
-                <Text style={styles.footerLink} onPress={onLogIn}> Log In</Text>
-            </Text>
+                <Text style={styles.footerText}>
+                    Already have an account?
+                    <Text style={styles.footerLink} onPress={onLogIn}> Log In</Text>
+                </Text>
+            </ScrollView>
         </SafeAreaView>
     );
 }
