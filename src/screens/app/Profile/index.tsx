@@ -1,8 +1,16 @@
-import React from "react"
-import { Text } from "react-native";
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
+import { styles } from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Profile = () => {
-    return (<Text>Profile</Text>);
+    return (
+        <SafeAreaView>
+            <ScrollView style={styles.container}>
+                <Text>Profile</Text>
+            </ScrollView>
+        </SafeAreaView>
+    )
 }
 
-export default Profile;
+export default React.memo(Profile);

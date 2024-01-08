@@ -1,8 +1,16 @@
-import React from "react"
-import { Text } from "react-native";
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
+import { styles } from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Settings = () => {
-    return (<Text>Settings</Text>);
+    return (
+        <SafeAreaView>
+            <ScrollView style={styles.container}>
+                <Text>Settings</Text>
+            </ScrollView>
+        </SafeAreaView>
+    )
 }
 
-export default Settings;
+export default React.memo(Settings);

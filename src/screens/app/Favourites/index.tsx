@@ -1,8 +1,16 @@
-import React from "react"
-import { Text } from "react-native";
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
+import { styles } from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Favourites = () => {
-    return (<Text>Favourites</Text>);
+const Favorites = () => {
+    return (
+        <SafeAreaView>
+            <ScrollView style={styles.container}>
+                <Text>Favorites</Text>
+            </ScrollView>
+        </SafeAreaView>
+    )
 }
 
-export default Favourites;
+export default React.memo(Favorites);
