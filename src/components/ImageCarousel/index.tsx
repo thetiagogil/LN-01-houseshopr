@@ -10,8 +10,6 @@ const ImageCarousel = ({ images }: any): React.JSX.Element => {
     const handleScrollEnd = (event: any) => {
         const horizontalOffset = event.nativeEvent.contentOffset.x
         const index = Math.round(horizontalOffset / width)
-        console.log("index :>>", horizontalOffset)
-
         setActiveIndex(index)
     }
 
