@@ -22,7 +22,9 @@ const Splash = ({ navigation }: any): React.JSX.Element => {
                 <Text style={styles.title}>Here!</Text>
             </View>
 
-            <Button onPress={onSignup} title={"Sign Up"} />
+            <View style={styles.buttonContainer}>
+                <Button onPress={onSignup} title={"Sign Up"} />
+            </View>
 
             <Pressable onPress={onLogin} hitSlop={10}>
                 <Text style={styles.footerText}>Log In</Text>

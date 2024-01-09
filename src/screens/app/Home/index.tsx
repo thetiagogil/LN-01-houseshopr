@@ -9,7 +9,7 @@ import CategoryBox from '../../../components/CategoryBox/index.tsx';
 import ProductHomeItem from '../../../components/ProductHomeItem/index.tsx';
 
 
-const Home = (): React.JSX.Element => {
+const Home = ({ navigation }: any): React.JSX.Element => {
     const [selectedCategory, setSelectedCategory]: any = useState();
     const [keyword, setKeyword]: any = useState();
     const [filteredProducts, setFilteredProducts]: any = useState(products);
@@ -42,8 +42,12 @@ const Home = (): React.JSX.Element => {
     }
 
     const renderProductItem = ({ item }: any): React.JSX.Element => {
+        const onProductPress = (product: any) => {
+            navigation.navigate("ProductDetails", { product })
+        }
+
         return (
-            <ProductHomeItem {...item} />
+            <ProductHomeItem onPress={() => onProductPress(item)} {...item} />
         )
     }
 
