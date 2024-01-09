@@ -1,14 +1,30 @@
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { styles } from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { products } from '../../../data/products';
+import FavouriteItem from '../../../components/FavouriteItem';
+import Header from '../../../components/Header';
 
-const Favorites = () => {
+const Favorites = (): React.JSX.Element => {
+    const renderItem = ({ item }: any): React.JSX.Element => {
+        return (
+            <FavouriteItem
+                {...item}
+            />
+        )
+    }
+
     return (
         <SafeAreaView>
-            <ScrollView style={styles.container}>
-                <Text>Favorites</Text>
-            </ScrollView>
+            <View style={styles.container}>
+                <Header title={"Favourites"} />
+                <FlatList
+                    data={products}
+                    renderItem={renderItem}
+                    keyExtractor={(item): any => String(item.id)}
+                />
+            </View>
         </SafeAreaView>
     )
 }
