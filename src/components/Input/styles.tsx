@@ -28,5 +28,17 @@ export const styles = StyleSheet.create({
         width: 24,
         height: 24,
         marginHorizontal: 16
+    },
+    arrow: {
+        width: 24,
+        height: 24,
+        marginHorizontal: 16,
+        transform: [{rotate: "90deg"}]
+    },
+    placeholder: {
+        color: colors.lightGrey,
+        paddingHorizontal: 16,
+        paddingVertical: 12,
+        flex: 1
     }
 })
