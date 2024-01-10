@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Pressable, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Linking, Pressable, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './styles';
 import Button from '../../../components/Button';
@@ -11,6 +11,16 @@ const ProductDetails = ({ navigation, route }: any): React.JSX.Element => {
 
     const onBackPress = () => {
         navigation.goBack()
+    }
+
+    const onContact = () => {
+        // CONTACT BY PHONE
+        const phone = "+351930000000"
+        Linking.openURL(`tel: ${phone}`)
+
+        // CONTACT BY EMAIL
+        const email = "support@support.com"
+        Linking.openURL(`mailto: ${email}`)
     }
 
     return (
@@ -39,7 +49,7 @@ const ProductDetails = ({ navigation, route }: any): React.JSX.Element => {
                 <Pressable style={styles.bookmarkContainer}>
                     <Image style={styles.bookmarkIcon} source={require("../../../assets/bookmark_blue.png")} />
                 </Pressable>
-                <Button title={"Contact Seller"} />
+                <Button onPress={onContact} title={"Contact Seller"} />
             </View>
         </SafeAreaView>
     )

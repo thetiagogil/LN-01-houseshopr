@@ -1,7 +1,29 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../../utils/colors";
 
 export const styles = StyleSheet.create({
+    safe: {
+        flex: 1
+    },
     container: {
         padding: 24,
+        flex: 1
     },
+    name: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: colors.black,
+        marginBottom: 12
+    },
+    email: {
+        fontSize: 14,
+        color: colors.grey,
+        marginBottom: 16
+    },
+    content: {
+        flex: 1,
+    },
+    button: {
+        flex: 0
+    }
 })

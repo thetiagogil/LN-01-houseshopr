@@ -12,11 +12,25 @@ import Home from "./src/screens/app/Home";
 import Profile from "./src/screens/app/Profile";
 import { Image } from "react-native";
 import ProductDetails from "./src/screens/app/ProductDetails";
+import Settings from "./src/screens/app/Settings";
+import CreateListing from "./src/screens/app/CreateListing";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const Tabs = () => {
+const ProfileStack = (): React.JSX.Element => {
+  return (
+    <Stack.Navigator>
+      <>
+        <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+        <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
+        <Stack.Screen name="CreateListing" component={CreateListing} options={{ headerShown: false }} />
+      </>
+    </Stack.Navigator>
+  )
+};
+
+const Tabs = (): React.JSX.Element => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -27,7 +41,7 @@ const Tabs = () => {
             icon = focused
               ? require("./src/assets/tabs/home_active.png")
               : require("./src/assets/tabs/home.png");
-          } else if (route.name === "Profile") {
+          } else if (route.name === "ProfileStack") {
             icon = focused
               ? require("./src/assets/tabs/profile_active.png")
               : require("./src/assets/tabs/profile.png");
@@ -45,7 +59,7 @@ const Tabs = () => {
     >
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Favourites" component={Favourites} />
-      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="ProfileStack" component={ProfileStack} />
     </Tab.Navigator>
   );
 }
