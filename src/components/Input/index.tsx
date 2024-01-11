@@ -1,22 +1,35 @@
 import React, { useState } from "react"
-import { Image, Pressable, Text, TextInput, View } from "react-native";
+import { Image, Modal, Pressable, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
+import { categories } from "../../data/categories";
 
 const Input = ({ label, type, isPassword, value, onChangeText, style, placeholder, ...props }: any): React.JSX.Element => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const [isPickerModalVisible, setIsPickerModalVisible]: any = useState(false);
 
     const onEyePress = () => {
         setIsPasswordVisible(!isPasswordVisible)
+    }
+
+    const onSelect = (oneCat: any) => {
+        onChangeText(oneCat)
+        setIsPickerModalVisible(false)
     }
 
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{label}</Text>
             {type === "picker" ? (
-                <Pressable style={styles.inputContainer}>
-                    <Text
-                        style={[styles.placeholder, style]}
-                    >{placeholder}</Text>
+                <Pressable onPress={() => setIsPickerModalVisible(true)} style={styles.inputContainer}>
+                    {value ? (
+                        <Text
+                            style={[styles.input, style]}
+                        >{value?.title}</Text>
+                    ) : (
+                        <Text
+                            style={[styles.placeholder, style]}
+                        >{placeholder}</Text>
+                    )}
 
                     <Image
                         style={styles.arrow}
@@ -42,6 +55,35 @@ const Input = ({ label, type, isPassword, value, onChangeText, style, placeholde
                 </View>
             )}
 
+            <Modal transparent visible={isPickerModalVisible}>
+                <TouchableOpacity
+                    activeOpacity={1}
+                    onPress={() => { setIsPickerModalVisible(false) }}
+                    style={styles.modalWrapper}
+                >
+                    <TouchableOpacity style={styles.modalContent}>
+                        <Text style={styles.headerTitle}>Select options</Text>
+
+                        {categories.map((oneCat: any) => {
+                            if (!oneCat || !oneCat.id || oneCat.id === 0) {
+                                return null
+                            }
+
+                            const selected = value?.id === oneCat?.id
+
+                            return (
+                                <Text
+                                    onPress={() => { onSelect(oneCat) }}
+                                    style={[styles.optionText, selected ? styles.selectedOption : {}]}
+                                    key={oneCat.id}
+                                >
+                                    {oneCat.title}
+                                </Text>
+                            )
+                        })}
+                    </TouchableOpacity>
+                </TouchableOpacity>
+            </Modal>
         </View>
     );
 }

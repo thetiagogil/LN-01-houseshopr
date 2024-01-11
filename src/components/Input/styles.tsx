@@ -33,12 +33,38 @@ export const styles = StyleSheet.create({
         width: 24,
         height: 24,
         marginHorizontal: 16,
-        transform: [{rotate: "90deg"}]
+        transform: [{ rotate: "90deg" }]
     },
     placeholder: {
         color: colors.lightGrey,
         paddingHorizontal: 16,
         paddingVertical: 12,
         flex: 1
+    },
+    modalWrapper: {
+        backgroundColor: "rgba(0,0,0,0.5)",
+        justifyContent: "center",
+        alignItems: "center",
+        flex: 1
+    },
+    modalContent: {
+        backgroundColor: colors.white,
+        borderRadius: 8,
+        padding: 16,
+        width: "80%"
+    },
+    headerTitle: {
+        color: colors.black,
+        marginBottom: 16,
+        fontSize: 16
+    },
+    optionText: {
+        color: colors.black,
+        paddingVertical: 4,
+        fontSize: 15,
+    },
+    selectedOption: {
+        color: colors.blue,
+        fontWeight: "bold"
     }
 })

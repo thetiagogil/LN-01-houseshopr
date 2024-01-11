@@ -7,7 +7,7 @@ import ListItem from '../../../components/ListItem';
 import EditableBox from '../../../components/EditableBox';
 import Button from '../../../components/Button';
 
-const Settings = ({navigation}: any): React.JSX.Element => {
+const Settings = ({ navigation }: any): React.JSX.Element => {
     const [editing, setEditing] = useState(false);
     const [values, setValues] = useState({ name: "User", email: "user@email.com" });
 
@@ -33,9 +33,9 @@ const Settings = ({navigation}: any): React.JSX.Element => {
 
     return (
         <SafeAreaView>
-            <Header showBack onBackPress={onBackPress} title={"Settings"} />
-
             <ScrollView style={styles.container}>
+                <Header showBack onBackPress={onBackPress} title={"Settings"} />
+
                 <View style={styles.sectionHeader}>
                     <Text style={styles.sectionTitle}>Personal Information</Text>
                     <Pressable onPress={onEditPress}>

@@ -17,20 +17,24 @@ const Profile = ({ navigation }: any): React.JSX.Element => {
         navigation.navigate("Settings")
     }
 
+    const onMyListingsPress = () => {
+        navigation.navigate("MyListings")
+    }
+
     const onNewListingPress = () => {
         navigation.navigate("CreateListing")
     }
 
     return (
         <SafeAreaView style={styles.safe}>
-            <Header title={"Profile"} showLogout onLogout={onLogout} />
-
             <View style={styles.container}>
+                <Header title={"Profile"} showLogout onLogout={onLogout} />
+
                 <View style={styles.content}>
                     <Text style={styles.name}>User Name</Text>
                     <Text style={styles.email}>User E-mail</Text>
 
-                    <ListItem title={"My Listings"} subtitle={`You have ${num} of listings`} />
+                    <ListItem onPress={onMyListingsPress} title={"My Listings"} subtitle={`You have ${num} of listings`} />
                     <ListItem onPress={onSettingsPress} title={"Settings"} subtitle={"Account, FAQ, Contact"} />
                 </View>
 

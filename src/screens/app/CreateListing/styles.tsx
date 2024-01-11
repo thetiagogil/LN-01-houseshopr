@@ -64,5 +64,8 @@ export const styles = StyleSheet.create({
     textArea: {
         minHeight: 150,
         paddingTop: 12,
+    },
+    button: {
+        marginBottom: 160
     }
 })

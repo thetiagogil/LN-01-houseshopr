@@ -5,7 +5,7 @@ import { styles } from "./styles";
 const ListItem = ({ title, subtitle, onPress, style }: any): React.JSX.Element => {
     return (
         <Pressable onPress={onPress} style={[styles.container, style]}>
-            <View style={styles.content}>
+            <View>
                 <Text style={styles.title}>{title}</Text>
 
                 {!!subtitle ? (

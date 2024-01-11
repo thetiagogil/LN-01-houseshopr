@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         padding: 12,
-        marginHorizontal: 10,
         backgroundColor: colors.white,
         marginVertical: 12,
         borderRadius: 4,
@@ -20,9 +19,6 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 5.0,
         elevation: 4,
-    },
-    content: {
-
     },
     title: {
         color: colors.blue,

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ActivityIndicator, Image, KeyboardAvoidingView, Pressable, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../../components/Header';
 import Input from '../../../components/Input';
+import Button from '../../../components/Button';
 // import { launchImageLibrary } from 'react-native-image-picker';
 
 const CreateListing = ({ navigation }: any): React.JSX.Element => {
@@ -15,6 +16,7 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
         navigation.goBack()
     }
 
+    // REACT-NATIVE-IMAGE-PICKER IS NOT WORKING WITH ANDROID EMULATOR SO I COULDN'T USE THIS METHOD
     /*     const uploadNewImage = async () => {
             setLoading(true)
         
@@ -29,6 +31,14 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
             }
         } */
 
+    // INSTEAD I JUST USED THIS TO CHECK IF IMG IS CORRECT - DELETE THIS AFTER PROBLEM IS SOLVED
+    const uploadNewImage = () => {
+        setImages((list: any) => [
+            ...list,
+            { uri: "https://i.pinimg.com/736x/d8/da/9f/d8da9febad2d2bb1277bfa907fde481d.jpg" },
+        ]);
+    };
+
     const onDeleteImage = (image: any) => {
         setImages((list: any) => {
             const filteredImages = list.filter((img: any) => img?.Filename !== image.Filename)
@@ -40,20 +50,14 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
         setValues((val: any) => ({ ...val, [key]: value }))
     }
 
-    // DELETE THIS AFTER PROBLEM IS SOLVED
-    const uploadNewImage = () => {
-        setImages((list: any) => [
-            ...list,
-            { uri: "https://i.pinimg.com/736x/d8/da/9f/d8da9febad2d2bb1277bfa907fde481d.jpg" },
-        ]);
-    };
+
 
     return (
         <SafeAreaView>
             <Header showBack onBackPress={onBackPress} title={"Create a new listing"} />
 
-            <KeyboardAvoidingView behavior="position">
-                <ScrollView style={styles.container}>
+            <ScrollView style={styles.container}>
+                <KeyboardAvoidingView behavior="position">
                     <Text style={styles.sectionTitle}>Upload Photos</Text>
 
                     <View style={styles.imageRow}>
@@ -110,9 +114,10 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
                         multiline
                         textAlignVertical="top"
                     />
+                    <Button title={"Submit"} sxtyle={styles.button} />
 
-                </ScrollView>
-            </KeyboardAvoidingView>
+                </KeyboardAvoidingView>
+            </ScrollView>
         </SafeAreaView>
     )
 }

@@ -53,25 +53,26 @@ const Home = ({ navigation }: any): React.JSX.Element => {
 
     return (
         <SafeAreaView>
-            <Header showSearch keyword={keyword} onSearch={setKeyword} title={"Find All You Need"} />
+            <View style={styles.container}>
+                <Header showSearch keyword={keyword} onSearch={setKeyword} title={"Find All You Need"} />
 
-            <FlatList
-                showsHorizontalScrollIndicator={false}
-                style={styles.list}
-                horizontal
-                data={categories}
-                renderItem={renderCategoryItem}
-                keyExtractor={(item): any => String(item.id)}
-            />
+                <FlatList
+                    style={styles.list}
+                    showsHorizontalScrollIndicator={false}
+                    horizontal
+                    data={categories}
+                    renderItem={renderCategoryItem}
+                    keyExtractor={(item): any => String(item.id)}
+                />
 
-            <FlatList
-                style={styles.productsList}
-                numColumns={2}
-                data={filteredProducts}
-                renderItem={renderProductItem}
-                keyExtractor={(item) => String(item.id)}
-                ListFooterComponent={<View style={{ height: 200 }} />}
-            />
+                <FlatList
+                    style={styles.productsList}
+                    numColumns={2}
+                    data={filteredProducts}
+                    renderItem={renderProductItem}
+                    keyExtractor={(item) => String(item.id)}
+                />
+            </View>
         </SafeAreaView>
     )
 }
