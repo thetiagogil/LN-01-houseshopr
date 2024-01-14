@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
-import { styles } from "./styles.tsx"
-import AuthHeader from "../../../components/AuthHeader/index.tsx";
-import Input from "../../../components/Input/index.tsx";
-import Checkbox from "../../../components/Checkbox/index.tsx";
-import Button from "../../../components/Button/index.tsx";
-import Separator from "../../../components/Separator/index.tsx";
-import GoogleLogin from "../../../components/GoogleLogin/index.tsx";
+import { styles } from "./styles.js"
+import AuthHeader from "../../../components/AuthHeader/index.js";
+import Input from "../../../components/Input/index.js";
+import Checkbox from "../../../components/Checkbox/index.js";
+import Button from "../../../components/Button/index.js";
+import Separator from "../../../components/Separator/index.js";
+import GoogleLogin from "../../../components/GoogleLogin/index.js";
 
 const Signup = ({ navigation }) => {
     const [checked, setChecked] = useState(false);

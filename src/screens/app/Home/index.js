@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, View } from 'react-native';
-import { styles } from './styles';
+import { styles } from './styles.js';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { categories } from '../../../data/categories.tsx';
-import { products } from '../../../data/products.tsx';
-import Header from '../../../components/Header/index.tsx';
-import CategoryBox from '../../../components/CategoryBox/index.tsx';
-import ProductHomeItem from '../../../components/ProductHomeItem/index.tsx';
+import { categories } from '../../../data/categories.js';
+import { products } from '../../../data/products.js';
+import Header from '../../../components/Header/index.js';
+import CategoryBox from '../../../components/CategoryBox/index.js';
+import ProductHomeItem from '../../../components/ProductHomeItem/index.js';
 
 
 const Home = ({ navigation }) => {
