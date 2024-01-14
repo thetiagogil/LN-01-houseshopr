@@ -4,16 +4,16 @@ import { styles } from "./styles";
 
 const { width } = Dimensions.get("window")
 
-const ImageCarousel = ({ images }: any): React.JSX.Element => {
+const ImageCarousel = ({ images }) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const handleScrollEnd = (event: any) => {
+    const handleScrollEnd = (event) => {
         const horizontalOffset = event.nativeEvent.contentOffset.x
         const index = Math.round(horizontalOffset / width)
         setActiveIndex(index)
     }
 
-    const renderImage = ({ item }: any): React.JSX.Element => {
+    const renderImage = ({ item }) => {
         return (
             <Image style={styles.image} source={{ uri: item }} />
         )
@@ -24,7 +24,7 @@ const ImageCarousel = ({ images }: any): React.JSX.Element => {
             <FlatList horizontal pagingEnabled style={styles.list} data={images} renderItem={renderImage} onMomentumScrollEnd={handleScrollEnd} />
 
             <View style={styles.pagination}>
-                {images?.map((_: any, index: any) => (
+                {images?.map((_, index) => (
                     <View style={[styles.paginationLine, index === activeIndex ? styles.activeLine : {}]} key={index} />
                 ))}
             </View>

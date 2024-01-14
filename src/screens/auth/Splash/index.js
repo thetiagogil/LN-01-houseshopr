@@ -3,12 +3,12 @@ import { Image, Pressable, SafeAreaView, Text, View } from "react-native";
 import { styles } from "./styles"
 import Button from "../../../components/Button";
 
-const Splash = ({ navigation }: any): React.JSX.Element => {
-    const onSignup = (): any => {
+const Splash = ({ navigation }) => {
+    const onSignup = () => {
         navigation.navigate("Signup")
     }
 
-    const onLogin = (): any => {
+    const onLogin = () => {
         navigation.navigate("Login")
     }
 

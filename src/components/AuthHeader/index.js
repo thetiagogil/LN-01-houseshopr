@@ -2,7 +2,7 @@ import React from "react"
 import { Image, Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
 
-const AuthHeader = ({ title, onBackPress }: any): React.JSX.Element => {
+const AuthHeader = ({ title, onBackPress }) => {
     return (
         <View style={styles.container}>
             <Pressable hitSlop={10} onPress={onBackPress}>

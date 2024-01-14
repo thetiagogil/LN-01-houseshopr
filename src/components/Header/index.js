@@ -3,7 +3,7 @@ import { Image, Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
 import Input from "../Input";
 
-const Header = ({ title, onBackPress, onLogout, showSearch, showLoggout, showBack, onSearch, keyword }: any): React.JSX.Element => {
+const Header = ({ title, onBackPress, onLogout, showSearch, showLoggout, showBack, onSearch, keyword }) => {
     const [showSearchInput, setShowSearchInput] = useState(false);
 
     const onSearchClick = () => {

@@ -3,15 +3,15 @@ import { Image, Modal, Pressable, Text, TextInput, TouchableOpacity, View } from
 import { styles } from "./styles";
 import { categories } from "../../data/categories";
 
-const Input = ({ label, type, isPassword, value, onChangeText, style, placeholder, ...props }: any): React.JSX.Element => {
+const Input = ({ label, type, isPassword, value, onChangeText, style, placeholder, ...props }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-    const [isPickerModalVisible, setIsPickerModalVisible]: any = useState(false);
+    const [isPickerModalVisible, setIsPickerModalVisible] = useState(false);
 
     const onEyePress = () => {
         setIsPasswordVisible(!isPasswordVisible)
     }
 
-    const onSelect = (oneCat: any) => {
+    const onSelect = (oneCat) => {
         onChangeText(oneCat)
         setIsPickerModalVisible(false)
     }
@@ -64,7 +64,7 @@ const Input = ({ label, type, isPassword, value, onChangeText, style, placeholde
                     <TouchableOpacity style={styles.modalContent}>
                         <Text style={styles.headerTitle}>Select options</Text>
 
-                        {categories.map((oneCat: any) => {
+                        {categories.map((oneCat) => {
                             if (!oneCat || !oneCat.id || oneCat.id === 0) {
                                 return null
                             }

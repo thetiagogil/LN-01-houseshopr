@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, Text, View, Image } from 'react-native';
 import { styles } from './styles';
 
-const FavouriteItem = ({ title, price, icon, image, onPress }: any): React.JSX.Element => {
+const FavouriteItem = ({ title, price, icon, image, onPress }) => {
     return (
         <Pressable onPress={onPress} style={styles.container}>
             <Image style={styles.image} source={{ uri: image }} />

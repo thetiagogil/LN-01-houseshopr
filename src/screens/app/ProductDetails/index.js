@@ -6,7 +6,7 @@ import Button from '../../../components/Button';
 import ImageCarousel from '../../../components/ImageCarousel';
 
 
-const ProductDetails = ({ navigation, route }: any): React.JSX.Element => {
+const ProductDetails = ({ navigation, route }) => {
     const { product } = route?.params || {}
 
     const onBackPress = () => {

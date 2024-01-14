@@ -6,7 +6,7 @@ import Header from '../../../components/Header';
 import ListItem from '../../../components/ListItem';
 import Button from '../../../components/Button';
 
-const Profile = ({ navigation }: any): React.JSX.Element => {
+const Profile = ({ navigation }) => {
     const num = 10
 
     const onLogout = () => {

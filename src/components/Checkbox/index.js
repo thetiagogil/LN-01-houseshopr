@@ -2,7 +2,7 @@ import React from "react"
 import { Image, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 
-const Checkbox = ({ checked, onCheck }: any): React.JSX.Element => {
+const Checkbox = ({ checked, onCheck }) => {
     return (
         <TouchableOpacity style={styles.container} onPress={() => onCheck(!checked)} hitSlop={10} activeOpacity={0.5}>
             {checked ? (

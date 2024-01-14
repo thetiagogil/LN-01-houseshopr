@@ -7,7 +7,7 @@ import ListItem from '../../../components/ListItem';
 import EditableBox from '../../../components/EditableBox';
 import Button from '../../../components/Button';
 
-const Settings = ({ navigation }: any): React.JSX.Element => {
+const Settings = ({ navigation }) => {
     const [editing, setEditing] = useState(false);
     const [values, setValues] = useState({ name: "User", email: "user@email.com" });
 
@@ -19,7 +19,7 @@ const Settings = ({ navigation }: any): React.JSX.Element => {
         setEditing(false)
     }
 
-    const onChange = (key: any, value: any) => {
+    const onChange = (key, value) => {
         setValues(e => ({ ...e, [key]: value }))
     }
 
@@ -45,13 +45,13 @@ const Settings = ({ navigation }: any): React.JSX.Element => {
 
                 <EditableBox
                     label={"Name"}
-                    onChangeText={(e: any) => onChange("name", e)}
+                    onChangeText={(e) => onChange("name", e)}
                     value={values.name}
                     editable={editing} />
 
                 <EditableBox
                     label={"E-mail"}
-                    onChangeText={(e: any) => onChange("email", e)}
+                    onChangeText={(e) => onChange("email", e)}
                     value={values.email}
                     editable={editing} />
 

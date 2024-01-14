@@ -19,7 +19,7 @@ import MyListings from "./src/screens/app/MyListings";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const ProfileStack = (): React.JSX.Element => {
+const ProfileStack = () => {
   return (
     <Stack.Navigator>
       <>
@@ -32,7 +32,7 @@ const ProfileStack = (): React.JSX.Element => {
   )
 };
 
-const Tabs = (): React.JSX.Element => {
+const Tabs = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -66,10 +66,10 @@ const Tabs = (): React.JSX.Element => {
   );
 }
 
-const App = (): React.JSX.Element => {
+const App = () => {
   const isSignedIn = true;
 
-  const theme: any = {
+  const theme = {
     colors: {
       background: colors.white
     }

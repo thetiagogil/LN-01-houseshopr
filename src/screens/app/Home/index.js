@@ -9,27 +9,27 @@ import CategoryBox from '../../../components/CategoryBox/index.tsx';
 import ProductHomeItem from '../../../components/ProductHomeItem/index.tsx';
 
 
-const Home = ({ navigation }: any): React.JSX.Element => {
-    const [selectedCategory, setSelectedCategory]: any = useState();
-    const [keyword, setKeyword]: any = useState();
-    const [filteredProducts, setFilteredProducts]: any = useState(products);
+const Home = ({ navigation }) => {
+    const [selectedCategory, setSelectedCategory] = useState();
+    const [keyword, setKeyword] = useState();
+    const [filteredProducts, setFilteredProducts] = useState(products);
 
     useEffect(() => {
         if (selectedCategory && !keyword) {
-            const updatedProducts = products.filter((product): any => product?.category === selectedCategory);
+            const updatedProducts = products.filter((product) => product?.category === selectedCategory);
             setFilteredProducts(updatedProducts);
         } else if (selectedCategory && keyword) {
-            const updatedProducts = products.filter((product): any => product?.category === selectedCategory && product?.title?.toLowerCase().includes(keyword?.toLowerCase()));
+            const updatedProducts = products.filter((product) => product?.category === selectedCategory && product?.title?.toLowerCase().includes(keyword?.toLowerCase()));
             setFilteredProducts(updatedProducts);
         } else if (!selectedCategory && keyword) {
-            const updatedProducts = products.filter((product): any => product?.title?.toLowerCase().includes(keyword?.toLowerCase()));
+            const updatedProducts = products.filter((product) => product?.title?.toLowerCase().includes(keyword?.toLowerCase()));
             setFilteredProducts(updatedProducts);
         } else if (!keyword && !selectedCategory) {
             setFilteredProducts(products);
         }
     }, [selectedCategory, keyword])
 
-    const renderCategoryItem = ({ item, index }: any): React.JSX.Element => {
+    const renderCategoryItem = ({ item, index }) => {
         return (
             <CategoryBox
                 onPress={() => { setSelectedCategory(item?.id) }}
@@ -41,8 +41,8 @@ const Home = ({ navigation }: any): React.JSX.Element => {
         )
     }
 
-    const renderProductItem = ({ item }: any): React.JSX.Element => {
-        const onProductPress = (product: any) => {
+    const renderProductItem = ({ item }) => {
+        const onProductPress = (product) => {
             navigation.navigate("ProductDetails", { product })
         }
 
@@ -62,7 +62,7 @@ const Home = ({ navigation }: any): React.JSX.Element => {
                     horizontal
                     data={categories}
                     renderItem={renderCategoryItem}
-                    keyExtractor={(item): any => String(item.id)}
+                    keyExtractor={(item) => String(item.id)}
                 />
 
                 <FlatList

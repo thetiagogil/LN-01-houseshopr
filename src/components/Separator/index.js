@@ -2,7 +2,7 @@ import React from "react"
 import { Text, View } from "react-native";
 import { styles } from "./styles";
 
-const Separator = ({ text }: any): React.JSX.Element => {
+const Separator = ({ text }) => {
     return (
         <View style={styles.container}>
             <View style={styles.line} />

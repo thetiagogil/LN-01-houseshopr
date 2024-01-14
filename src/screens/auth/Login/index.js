@@ -8,12 +8,12 @@ import Separator from "../../../components/Separator/index.tsx";
 import GoogleLogin from "../../../components/GoogleLogin/index.tsx";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Login = ({ navigation }: any): React.JSX.Element => {
-    const onSignUp = (): any => {
+const Login = ({ navigation }) => {
+    const onSignUp = () => {
         navigation.navigate("Signup")
     }
 
-    const onBack = (): any => {
+    const onBack = () => {
         navigation.goBack()
     }
 

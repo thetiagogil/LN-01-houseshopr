@@ -7,9 +7,9 @@ import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 // import { launchImageLibrary } from 'react-native-image-picker';
 
-const CreateListing = ({ navigation }: any): React.JSX.Element => {
-    const [images, setImages]: any = useState([]);
-    const [values, setValues]: any = useState({});
+const CreateListing = ({ navigation }) => {
+    const [images, setImages] = useState([]);
+    const [values, setValues] = useState({});
     const [loading, setLoading] = useState(false);
 
     const onBackPress = () => {
@@ -20,34 +20,34 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
     /*     const uploadNewImage = async () => {
             setLoading(true)
         
-            const options: any = {
+            const options = {
             };
     
             const result = await launchImageLibrary(options)
 
             if(result?.assets?.length) {
-                setImages((list: any) => ({...list, ...result?.assets}))
+                setImages((list) => ({...list, ...result?.assets}))
                 setLoading(false)
             }
         } */
 
     // INSTEAD I JUST USED THIS TO CHECK IF IMG IS CORRECT - DELETE THIS AFTER PROBLEM IS SOLVED
     const uploadNewImage = () => {
-        setImages((list: any) => [
+        setImages((list) => [
             ...list,
             { uri: "https://i.pinimg.com/736x/d8/da/9f/d8da9febad2d2bb1277bfa907fde481d.jpg" },
         ]);
     };
 
-    const onDeleteImage = (image: any) => {
-        setImages((list: any) => {
-            const filteredImages = list.filter((img: any) => img?.Filename !== image.Filename)
+    const onDeleteImage = (image) => {
+        setImages((list) => {
+            const filteredImages = list.filter((img) => img?.Filename !== image.Filename)
             return filteredImages
         })
     }
 
-    const onChange = (value: any, key: any) => {
-        setValues((val: any) => ({ ...val, [key]: value }))
+    const onChange = (value, key) => {
+        setValues((val) => ({ ...val, [key]: value }))
     }
 
 
@@ -67,7 +67,7 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
                             </View>
                         </TouchableOpacity>
 
-                        {images?.map((image: any, index: any) => (
+                        {images?.map((image, index) => (
                             <View style={styles.imageContainer} key={index}>
                                 <Image style={styles.image} source={{ uri: image?.uri }} />
 
@@ -86,14 +86,14 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
                         placeholder={"Listing Title"}
                         label={"Title"}
                         value={values.title}
-                        onChangeText={(v: any) => { onChange(v, "title") }}
+                        onChangeText={(v) => { onChange(v, "title") }}
                     />
 
                     <Input
                         placeholder={"Selected Category"}
                         label={"Category"}
                         value={values.category}
-                        onChangeText={(v: any) => { onChange(v, "category") }}
+                        onChangeText={(v) => { onChange(v, "category") }}
                         type="picker"
                     />
 
@@ -101,7 +101,7 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
                         placeholder={"Enter price in EUR"}
                         label={"Price"}
                         value={values.price}
-                        onChangeText={(v: any) => { onChange(v, "price") }}
+                        onChangeText={(v) => { onChange(v, "price") }}
                         keyboardType={"numeric"}
                     />
 
@@ -110,7 +110,7 @@ const CreateListing = ({ navigation }: any): React.JSX.Element => {
                         placeholder={"Tell us more..."}
                         label={"Description"}
                         value={values.description}
-                        onChangeText={(v: any) => { onChange(v, "description") }}
+                        onChangeText={(v) => { onChange(v, "description") }}
                         multiline
                         textAlignVertical="top"
                     />

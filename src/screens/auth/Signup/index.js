@@ -8,14 +8,14 @@ import Button from "../../../components/Button/index.tsx";
 import Separator from "../../../components/Separator/index.tsx";
 import GoogleLogin from "../../../components/GoogleLogin/index.tsx";
 
-const Signup = ({ navigation }: any): React.JSX.Element => {
+const Signup = ({ navigation }) => {
     const [checked, setChecked] = useState(false);
 
-    const onLogIn = (): any => {
+    const onLogIn = () => {
         navigation.navigate("Login")
     }
 
-    const onBack = (): any => {
+    const onBack = () => {
         navigation.goBack()
     }
 

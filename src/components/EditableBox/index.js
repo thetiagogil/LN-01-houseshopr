@@ -2,7 +2,7 @@ import React from "react"
 import { Image, Pressable, Text, TextInput, View } from "react-native";
 import { styles } from "./styles";
 
-const EditableBox = ({ label, editable, value, onChangeText, style }: any): React.JSX.Element => {
+const EditableBox = ({ label, editable, value, onChangeText, style }) => {
     return (
         <View style={[styles.container, style]}>
             <Text style={styles.label}>{label}</Text>
