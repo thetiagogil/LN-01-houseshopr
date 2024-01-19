@@ -70,15 +70,14 @@ def enableProguardInReleaseBuilds = false
 def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
-    ndkVersion rootProject.ext.ndkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-    compileSdk rootProject.ext.compileSdkVersion
+    ndkVersion ndkVersion
+    compileSdk 34
 
     namespace "com.houseshopr"
     defaultConfig {
         applicationId "com.houseshopr"
         minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
